@@ -1,6 +1,8 @@
 package Test.java.com.tgothd.test;
 
 import main.java.com.tgothd.demo.RealizeType;
+import main.java.com.tgothd.simpleFactory.PizzaSimpleFactory;
+import main.java.com.tgothd.simpleFactory.PizzaStore;
 import org.junit.Test;
 
 /**
@@ -15,6 +17,14 @@ public class MyTest extends Object {
         RealizeType obj1 = new RealizeType();
         RealizeType obj2 = (RealizeType)obj1.clone();
         System.out.println("obj1==obj2?"+(obj1==obj2));
+    }
+
+    @Test
+    public void simpleFactory(){
+        PizzaSimpleFactory pizzaSimpleFactory = new PizzaSimpleFactory();
+        PizzaStore pizzaStore = new PizzaStore(pizzaSimpleFactory);
+        pizzaStore.orderPizza("vegetables");
+        pizzaStore.orderPizza("meat");
     }
 
 }
