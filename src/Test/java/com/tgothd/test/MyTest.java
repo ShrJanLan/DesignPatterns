@@ -1,6 +1,10 @@
 package Test.java.com.tgothd.test;
 
 import main.java.com.tgothd.abstractFactory.Store;
+import main.java.com.tgothd.builder.Robot;
+import main.java.com.tgothd.builder.RobotBuilder;
+import main.java.com.tgothd.builder.SmartRobotBuilder;
+import main.java.com.tgothd.builder.Work;
 import main.java.com.tgothd.demo.RealizeType;
 import main.java.com.tgothd.factory.PizzaStore2;
 import main.java.com.tgothd.simpleFactory.PizzaSimpleFactory;
@@ -41,6 +45,16 @@ public class MyTest extends Object {
     public void testAbstractFactory() {
         Store store = new Store();
         store.consume("pizza","vegetables","hot");
+    }
+
+    @Test
+    public void testBuilder() {
+        Work work = new Work();
+        RobotBuilder robotBuilder = new SmartRobotBuilder();
+        Robot robot = work.buildRobot(robotBuilder);
+        System.out.println(robot.getHead());
+        System.out.println(robot.getBody());
+        System.out.println(robot.getLegs());
     }
 
 }
