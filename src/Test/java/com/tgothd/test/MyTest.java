@@ -1,5 +1,6 @@
 package Test.java.com.tgothd.test;
 
+import main.java.com.tgothd.abstractFactory.Store;
 import main.java.com.tgothd.demo.RealizeType;
 import main.java.com.tgothd.factory.PizzaStore2;
 import main.java.com.tgothd.simpleFactory.PizzaSimpleFactory;
@@ -34,6 +35,12 @@ public class MyTest extends Object {
         pizzaStore.orderPizza("vegetables");
         PizzaStore2 pizzaStore2 = new PizzaStore2();
         pizzaStore2.orderPizza("meat");
+    }
+
+    @Test
+    public void testAbstractFactory() {
+        Store store = new Store();
+        store.consume("pizza","vegetables","hot");
     }
 
 }
